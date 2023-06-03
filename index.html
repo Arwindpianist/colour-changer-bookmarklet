@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colour Changer</title>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        function createBookmarklet() {
+            var bookmarkletCode = "(function() {\n" +
+                "var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);\n" +
+                "document.body.style.backgroundColor = randomColor;\n" +
+                "})();";
+            var a = document.createElement("a");
+            a.href = "javascript:" + encodeURIComponent(bookmarkletCode);
+            a.className = "bookmarklet";
+            a.innerText = "Colour Changer";
+            document.body.appendChild(a);
+        }
+    </script>
+</head>
+
+<body 
+    onload="createBookmarklet()">
+    <h1>Drag the button to your bookmarks tab</h1>
+</body>
+
+</html>
